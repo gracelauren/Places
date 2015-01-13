@@ -1,10 +1,10 @@
 require('sinatra')
-require('sinatra-reloader')
+require('sinatra/reloader')
 require('./lib/places')
 also_reload('./lib/**/*.rb')
 
 get('/') do
-  @places = Places.all()
+  @all_places = Places.all()
   erb(:index)
 end
 
